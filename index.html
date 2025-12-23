@@ -9,14 +9,29 @@
 
 </head>
 <body>
+ <div class="theme-toggle">
+      <span class="icon sun"><i class="fa-solid fa-sun" ></i>
+      </span>
+
+      <label class="switch">
+        <input type="checkbox" id="themeSwitch">
+        <span class="slider"></span>
+      </label>
+
+      <span class="icon moon"><i class="fa-solid fa-moon"></i></span>
+  </div> 
 <div class="container">
     <div class="calculator">
+        <div class="history-btn" onclick="toggleHistory()">
+            <i class="fa-solid fa-ellipsis-vertical tooltip" data-title="History" id="openIcon"></i>
+        </div>
+
         <div class="display">
             <input type="text"  id="display" readonly>
         </div>
 
         <div class="firstRow">
-            <button type="button" onclick="clearAll()"><i class="fa-solid fa-c"></i></button>
+            <button type="button" onclick="clearAll()">AC</button>
             <button type="button" onclick="deleteLast()"><i class="fa-solid fa-delete-left" id="deleteLast"></i></button>
             <button type="button" onclick="append('%')"><i class="fa-solid fa-percent"></i>
 </button>
@@ -54,9 +69,35 @@
             <button type="button" onclick="append('.')">.</button>
             <button type="button" onclick="calculate()" class="equal"><i class="fa-solid fa-equals"></i></button>
         </div>
+        <div class="history-panel" id="historyPanel">
+            <div class="history-header" >
+                <i class="fa-solid fa-arrow-left" onclick="toggleHistory()" id="closeIcon"></i>
+                <span>History</span>
+                <i class="fa-solid fa-trash" onclick="clearHistory()"></i>
+            </div>
+            <ul id="historyList"></ul>
+        </div>
+    </div>
+    <div class="reference-section">
+      <h3>Redmi Calculator – UI Reference</h3>
 
+      <div class="phone-frame">
+        <video
+          src="Redmi-mobile-calculator.mp4"
+          autoplay
+          muted
+          loop
+          playsinline>
+        </video>
+      </div>
+
+      <p class="disclaimer">
+        This video is shown for UI reference only.
+        All rights belong to Xiaomi / Redmi.
+      </p>
     </div>
 </div>
     <script src="script.js"></script>
 </body>
 </html>
+
